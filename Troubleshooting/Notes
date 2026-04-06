@@ -1,0 +1,18 @@
+Issue: VPN tunnel remained DOWN
+Cause: Incorrect remote gateway (used private IP instead of AWS public endpoint)
+Fix: Updated remote gateway to AWS tunnel public IP 3.218.147.132 and 3.227.212.78
+
+
+Issue: Unable to modify Phase 2 subnet (0.0.0.0/0 locked)
+Cause: FortiGate wizard template restrictions
+Fix: Left as 0.0.0.0/0 and controlled traffic using firewall policies and static routes
+
+
+Issue: VLAN could not be renamed
+Cause: Interface dependencies in FortiGate
+Fix: Used interface alias instead of renaming
+
+
+Issue: Tunnel inactive after configuration
+Cause: No traffic initiated to AWS network
+Fix: Generated traffic using ping to 10.0.0.0/16 to bring tunnel up
