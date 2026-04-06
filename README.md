@@ -12,7 +12,7 @@ Dedicated management VLAN (VLAN99) for secure administrative access
 AWS VPC with public and private subnets
 Site-to-Site VPN connection (VPN_Fortigate_Lab) linking on-prem VLAN20 to AWS private subnet
 
-This lab simulates a real-world hybrid cloud architecture and reinforces concepts required for AWS Security Specialty and Azure AZ-500 certifications, including:
+This lab simulates a real-world hybrid cloud architecture and reinforces concepts required for AWS Security Specialty, including:
 
 Network segmentation and isolation
 Firewall policy enforcement (implicit deny model)
