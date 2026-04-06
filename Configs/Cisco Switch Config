@@ -1,0 +1,51 @@
+VLAN 10 — Users
+
+Interface Range: Gi1/0/2 - Gi1/0/5
+Mode: Access
+Description: End-user devices
+
+
+VLAN 20 — CyberLab
+
+Interface Range: Gi1/0/6 - Gi1/0/10
+Mode: Access
+Description: Security lab / testing environment
+
+
+VLAN 30 — IoT
+
+Interface Range: Gi1/0/13 - Gi1/0/14
+Mode: Access
+Description: IoT devices (restricted network)
+
+
+VLAN 40 — Test/Dev
+
+Interface Range: Gi1/0/15 - Gi1/0/18
+Mode: Access
+Description: Development / staging systems
+
+
+VLAN 50 — Lab / Management
+
+Interface Range: Gi1/0/19 - Gi1/0/22
+Mode: Access
+Description: Admin and lab management
+
+VLAN 99 MGMT
+
+Interface: Gi/1/0/12
+Mode: Access
+Description: Network management of infrastructure devices
+
+
+Trunk Ports
+
+Interface: Gi1/0/1
+Mode: Trunk
+Allowed VLANs: 10,20,30,40,50
+Description: Uplink to FortiGate (port1)
+
+Interface: Gi1/0/11
+Mode: Trunk 
+Description: FortiGate port2 VLAN 99 MGMT 
