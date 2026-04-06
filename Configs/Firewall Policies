@@ -1,3 +1,25 @@
+VLAN10 (Users) → AWS
+
+Policy: VLAN10_to_AWS_T1
+Incoming: VLAN10
+Outgoing: VPN_TUNNEL_1
+Source: 192.168.10.0/24
+Destination: 10.0.0.0/16
+Service: HTTP, HTTPS, DNS
+Action: ACCEPT
+NAT: DISABLED
+Security Profiles: ENABLED
+
+Policy: VLAN10_to_AWS_T2
+Incoming: VLAN10
+Outgoing: VPN_TUNNEL_2
+Source: 192.168.10.0/24
+Destination: 10.0.0.0/16
+Service: HTTP, HTTPS, DNS
+Action: ACCEPT
+NAT: DISABLED
+
+
 VLAN20 (CyberLab) → AWS
 
 Policy: VLAN20_to_AWS_T1
