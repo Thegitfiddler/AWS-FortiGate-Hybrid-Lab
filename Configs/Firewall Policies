@@ -1,0 +1,78 @@
+VLAN20 (CyberLab) → AWS
+
+Policy: VLAN20_to_AWS_T1
+Incoming: VLAN20
+Outgoing: VPN_TUNNEL_1
+Source: 192.168.20.0/24
+Destination: 10.0.0.0/16
+Service: ALL
+Action: ACCEPT
+NAT: DISABLED
+Security Profiles: ENABLED
+
+Policy: VLAN20_to_AWS_T2
+Incoming: VLAN20
+Outgoing: VPN_TUNNEL_2
+Source: 192.168.20.0/24
+Destination: 10.0.0.0/16
+Service: ALL
+Action: ACCEPT
+NAT: DISABLED
+
+
+VLAN40 (Test/Dev) → AWS
+
+Policy: VLAN40_to_AWS_T1
+Incoming: VLAN40
+Outgoing: VPN_TUNNEL_1
+Source: 192.168.40.0/24
+Destination: 10.0.0.0/16
+Service: HTTP, HTTPS, SSH
+Action: ACCEPT
+NAT: DISABLED
+Security Profiles: ENABLED
+
+Policy: VLAN40_to_AWS_T2
+Incoming: VLAN40
+Outgoing: VPN_TUNNEL_2
+
+
+VLAN50 (Lab) → AWS
+
+Policy: VLAN50_to_AWS_T1
+Incoming: VLAN50
+Outgoing: VPN_TUNNEL_1
+Source: 192.168.50.0/24
+Destination: 10.0.0.0/16
+Service: ALL
+Action: ACCEPT
+NAT: DISABLED
+
+Policy: VLAN50_to_AWS_T2
+Incoming: VLAN50
+Outgoing: VPN_TUNNEL_2
+
+
+# AWS → Internal (Return Traffic)
+
+Policy: AWS_to_Internal_T1
+Incoming: VPN_TUNNEL_1
+Outgoing: INTERNAL
+Source: 10.0.0.0/16
+Destination: 192.168.0.0/16
+Service: ALL
+Action: ACCEPT
+NAT: DISABLED
+
+Policy: AWS_to_Internal_T2
+Incoming: VPN_TUNNEL_2
+Outgoing: INTERNAL
+
+
+# Deny Rules (Security Segmentation)
+
+Policy: VLAN30_IoT_Block_AWS
+Incoming: VLAN30
+Outgoing: VPN
+Action: DENY
+
